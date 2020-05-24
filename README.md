@@ -15,5 +15,9 @@ Chrome拡張機能
 * `extension`ディレクトリを指定
 * 完了
 
+## Chrome Web Store
+
+審査待ち
+
 ## Licence
 [WTFPL](http://www.wtfpl.net/)
