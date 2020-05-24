@@ -1,0 +1,10 @@
+{
+  "manifest_version": 2,
+  "name": "twitter-web-hide-right-sidebar",
+  "description": "Twitterの右サイドバー(検索ボックス、トレンド、Who to Follow、Twitterメニュー)をなかったことにするカスタムCSS",
+  "version": "0.1.0",
+  "content_scripts": [{
+    "matches": ["http://twitter.com/*", "https://twitter.com/*"],
+    "css": ["custom.css"]
+  }]
+}

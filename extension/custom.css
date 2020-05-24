@@ -1,0 +1,8 @@
+/* destroy sidebar */
+div[data-testid="sidebarColumn"] {
+  display: none;
+}
+/* time-line size fix */
+main[role="main"] > div {
+  width: 600px;
+}
