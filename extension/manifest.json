@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Twitterの右サイドバーをなかったことにするやつ",
   "description": "Twitterの右サイドバー(検索ボックス、トレンド、Who to Follow、Twitterメニュー)をなかったことにするカスタムCSS",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "icons": {
     "16": "16x16.png",
     "48": "48x48.png",
