@@ -17,7 +17,7 @@ Chrome拡張機能
 
 ## Chrome Web Store
 
-[https://chrome.google.com/webstore/detail/gkdnjnodbdbfmbfdgghkllmhdgkilci](https://chrome.google.com/webstore/detail/gkdnjnodbdbfmbfdgghkllmhdgkilci)
+[https://chrome.google.com/webstore/detail/fgkdnjnodbdbfmbfdgghkllmhdgkilci](https://chrome.google.com/webstore/detail/fgkdnjnodbdbfmbfdgghkllmhdgkilci)
 
 ## Licence
 [WTFPL](http://www.wtfpl.net/)
