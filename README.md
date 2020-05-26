@@ -17,7 +17,7 @@ Chrome拡張機能
 
 ## Chrome Web Store
 
-審査待ち
+[https://chrome.google.com/webstore/detail/gkdnjnodbdbfmbfdgghkllmhdgkilci](https://chrome.google.com/webstore/detail/gkdnjnodbdbfmbfdgghkllmhdgkilci)
 
 ## Licence
 [WTFPL](http://www.wtfpl.net/)
