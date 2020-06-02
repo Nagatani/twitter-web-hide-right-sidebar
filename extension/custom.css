@@ -6,3 +6,7 @@ div[data-testid="sidebarColumn"] {
 main[role="main"] > div {
   width: 600px;
 }
+/* messages */
+main[role="main"] > div section[aria-label="Section details"][role="region"] {
+  width: 400px;
+}
