@@ -1,18 +1,34 @@
 {
   "manifest_version": 3,
   "name": "Twitter(現X)の右サイドバーをなかったことにするやつ",
-  "description": "Twitter(現X)の右サイドバー(検索ボックス、トレンド、Who to Follow、Twitterメニュー)をなかったことにするカスタムCSS",
-  "version": "0.1.3",
+  "description": "Twitter(現X)の右サイドバーをなかったことにするカスタムCSSを、titleタグを監視して自動割り当てを行う拡張機能です。",
+  "version": "0.1.4",
   "icons": {
     "16": "16x16.png",
     "48": "48x48.png",
    "128": "128x128.png"
   },
-  "content_scripts": [{
-    "matches": [
-      "*://twitter.com/*",
-      "*://x.com/*"
-    ],
-    "css": ["custom.css"]
-  }]
+  "host_permissions": [
+    "*://twitter.com/*",
+    "*://x.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "*://twitter.com/*",
+        "*://x.com/*"
+      ],
+      "js": ["content.js"],
+      "css": []
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["styles/hide-sidebar.css"],
+      "matches": [
+        "*://twitter.com/*",
+        "*://x.com/*"
+      ]
+    }
+  ]
 }
