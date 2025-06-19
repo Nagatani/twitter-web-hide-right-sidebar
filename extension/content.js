@@ -43,15 +43,57 @@ async function updateStyles() {
  * X.comではページ遷移時に必ず<title>が書き換わるため、これをトリガーにする
  */
 const observer = new MutationObserver(() => {
-  // titleが変更されたら、URLを再チェックしてCSSの状態を更新する
+  // このログがページ遷移時に表示されるかを確認
+  console.log('Observer triggered! Title has changed.'); 
   updateStyles();
 });
 
-// 最初の<title>要素を見つけて監視を開始
-const titleElement = document.querySelector('title');
-if (titleElement) {
-  observer.observe(titleElement, { childList: true, characterData: true, subtree: true });
+
+/**
+ * titleタグを探して、見つかれば監視を開始する関数
+ * @returns {boolean} 成功すればtrue、失敗すればfalseを返す
+ */
+function tryStartObserver() {
+  const titleElement = document.querySelector('title');
+
+  if (titleElement) {
+    console.log('✅ Title element found. Starting observer.');
+    observer.observe(titleElement, { childList: true, characterData: true, subtree: true });
+    return true; // 監視開始に成功
+  }
+  
+  return false; // titleが見つからず失敗
 }
 
-// ページ読み込み時の初回実行
-updateStyles();
+
+/**
+ * メインの処理
+ */
+function main() {
+  // まず一度、監視の開始を試みる
+  if (tryStartObserver()) {
+    updateStyles(); // 成功したら、初回分のスタイル更新を実行
+    return;
+  }
+
+  // 失敗した場合、titleが見つかるまでリトライ処理を開始する
+  console.log('Title not found, will retry every 500ms...');
+  
+  const retryInterval = setInterval(() => {
+    // リトライで監視開始を試みる
+    if (tryStartObserver()) {
+      // 成功したら、インターバルを停止
+      clearInterval(retryInterval);
+      console.log('Retry successful. Observer started.');
+      updateStyles(); // 成功したので、初回分のスタイル更新を実行
+    }
+  }, 500); // 500ミリ秒（0.5秒）ごとにリトライ
+
+  // 念のため、10秒経っても見つからない場合はリトライを停止する（無限ループ防止）
+  setTimeout(() => {
+    clearInterval(retryInterval);
+  }, 10000); 
+}
+
+// 処理を開始
+main();
