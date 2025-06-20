@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Twitter(現X)の右サイドバーをなかったことにするやつ",
   "description": "Twitter(現X)の右サイドバーをなかったことにするカスタムCSSを、titleタグを監視して自動割り当てを行う拡張機能です。",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "icons": {
     "16": "16x16.png",
     "48": "48x48.png",
